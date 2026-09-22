@@ -1,0 +1,27 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <ComponentGroup Id="AppComponents" Directory="INSTALLFOLDER">
+
+      <Component>
+        <File Source="HelloWiX.exe" />
+      </Component>
+
+      <Component>
+        <File Source="HelloWiX.dll" />
+      </Component>
+
+      <Component>
+        <File Source="HelloWiX.Core.dll" />
+      </Component>
+
+      <Component>
+        <File Source="HelloWiX.deps.json" />
+      </Component>
+
+      <Component>
+        <File Source="HelloWiX.runtimeconfig.json" />
+      </Component>
+
+    </ComponentGroup>
+  </Fragment>
+</Wix>
