@@ -1,0 +1,13 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="../HelloWiX/HelloWiX.csproj" />
+  <Project Path="HelloWiX.Core/HelloWiX.Core.csproj" />
+  <Project Path="HelloWiX.Installer/HelloWiX.Installer.wixproj" Type="b7dd6f7e-def8-4e67-b5b7-07ef123db6f0">
+    <Platform Solution="*|Any CPU" Project="x64" />
+  </Project>
+</Solution>

@@ -1,14 +1,15 @@
-<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <Package
-    Name="HelloWiX.Installer"
-    Manufacturer="Swinburne University"
-    Version="1.0.0"
-    UpgradeCode="THE-GENERATED-GUID">
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Package
+	  Name="HelloWiX.Installer"
+	  Manufacturer="Swinburne University"
+	  Version="1.0.0"
+	  UpgradeCode="5daf8d48-c213-4331-b252-d6101f5ae0c2">
 
-    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
 
-    <Feature Id="Main">
-      <ComponentGroupRef Id="AppComponents" />
-    </Feature>
-  </Package>
+		<Feature Id="Main">
+			<ComponentGroupRef Id="AppComponents" />
+		</Feature>
+
+	</Package>
 </Wix>

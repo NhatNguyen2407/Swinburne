@@ -1,0 +1,20 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="../HelloWiX.Installer/HelloWiX.Core/HelloWiX.Core.csproj" />
+  <Project Path="../HelloWiX.Installer/HelloWiX.Installer/HelloWiX.Installer.wixproj" Type="b7dd6f7e-def8-4e67-b5b7-07ef123db6f0">
+    <Platform Solution="*|Any CPU" Project="x64" />
+    <Platform Solution="*|ARM" Project="x64" />
+  </Project>
+  <Project Path="../HelloWiX.Package/HelloWiX.Package.wapproj" Type="c7167f0d-bc9f-4e6e-afe1-012c56b48db5" Id="f3bd4dd6-0a8c-4fbf-92da-f228abbcbb51">
+    <Deploy />
+  </Project>
+  <Project Path="HelloWiX.csproj">
+    <Platform Solution="Release|x64" Project="x64" />
+  </Project>
+</Solution>
