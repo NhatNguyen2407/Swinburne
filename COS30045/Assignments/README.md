@@ -2,7 +2,7 @@
 
 This directory contains assessment-related materials for **COS30045 Data Processing and Visualisation** at Swinburne University of Technology.
 
-## Contents
+## Current structure
 
 ```text
 Assignments/
@@ -19,23 +19,22 @@ Assignments/
 
 ## Demo 01
 
-Demo 01 documents introductory data processing and visualisation using KNIME. The materials currently stored in `Demo_01/` include a KNIME workflow, source data, an exported brand-count table, supporting course documentation, and an AI-use declaration.
+[Open the Demo 01 folder](Demo_01/README.md) for the workflow overview, file descriptions, execution steps, and data-interpretation notes.
 
-See [Demo 01 README](Demo_01/README.md) for the workflow overview and file guide.
+The folder currently contains a KNIME workflow, source data, an exported brand-count summary, supporting course documentation, and an AI-use declaration.
 
-## General organisation
+## Organising assessment work
 
-For each assessment, keep related artefacts together where practical:
+Keep the existing workflow and its input data in their current locations unless the workflow paths have been checked and updated. For future assessments, include a README that explains:
 
-- Workflow files (for example, `.knwf`)
-- Data files required to execute the workflow
-- Exported tables and visualisation outputs
-- Supporting documentation and assessment declarations
-- A README explaining the process, assumptions, and limitations
+- The purpose of the assessment
+- The files included and their roles
+- The main processing steps and tools
+- How to reproduce the workflow
+- Important assumptions, limitations, and AI-use disclosures
 
-## Important notes
+## Notes
 
-- Confirm that each workflow runs from the paths available on your computer.
-- Keep descriptions and analytical conclusions consistent with your actual KNIME outputs.
-- Do not publish restricted course materials or datasets unless sharing is permitted.
-- Declare generative AI use truthfully and follow the current assessment instructions.
+- Verify results against the executed workflow before reporting them.
+- Confirm that course materials and datasets may be shared before distributing the repository publicly.
+- Declare generative AI use accurately and follow the current assessment instructions.
