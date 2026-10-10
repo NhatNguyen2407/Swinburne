@@ -1,4 +1,4 @@
-# SWE40006 — Deployment Portfolio Task 4
+# SWE40006 - Deployment Portfolio Task 4
 
 This folder contains the source code and Dockerfiles for the Task 4 deployment activities.
 
@@ -9,7 +9,7 @@ This folder contains the source code and Dockerfiles for the Task 4 deployment a
 - `task44-cli-app/`: Task 4.4 terminal-based Task Manager.
 - `report/`: report deliverables and evidence index.
 
-## Task 4.2 — Python HTTP server
+## Task 4.2 - Python HTTP server
 
 Build and run locally:
 
@@ -23,7 +23,7 @@ Expected response: `Hello from my Python Docker app!`
 
 Docker Hub image: https://hub.docker.com/r/nhatnguyen2407/swe40006_task04
 
-## Task 4.3 — Web Task Manager
+## Task 4.3 - Web Task Manager
 
 ```powershell
 cd task43-web-app
@@ -33,7 +33,7 @@ docker run -d --name task-manager -p 8001:8000 task-manager:1.0
 
 Open http://localhost:8001. The application supports adding tasks, toggling completion and deleting tasks. The app stores tasks in `/app/tasks.json`; use a Docker volume if persistence across container recreation is required.
 
-## Task 4.4 — CLI Task Manager
+## Task 4.4 - CLI Task Manager
 
 ```powershell
 cd task44-cli-app
