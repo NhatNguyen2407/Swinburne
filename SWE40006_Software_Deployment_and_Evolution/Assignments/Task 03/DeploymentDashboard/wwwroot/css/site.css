@@ -1,0 +1,151 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+    --pixel-bg: #fff9e9;
+    --pixel-paper: #ffffff;
+    --pixel-ink: #292640;
+    --pixel-muted: #716b83;
+    --pixel-pink: #ffb8cb;
+    --pixel-blue: #b8dfff;
+    --pixel-green: #bdecc6;
+    --pixel-yellow: #ffe69a;
+    --pixel-border: 3px solid var(--pixel-ink);
+    --pixel-shadow: 5px 5px 0 var(--pixel-ink);
+}
+
+html {
+    font-size: 16px;
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--pixel-bg);
+    color: var(--pixel-ink);
+    font-family: 'VT323', 'Courier New', monospace;
+    font-size: 22px;
+    line-height: 1.5;
+    background-image: radial-gradient(#e8dcca 1px, transparent 1px);
+    background-size: 18px 18px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.pixel-heading,
+.navbar-brand {
+    color: var(--pixel-ink);
+    font-family: 'Press Start 2P', monospace;
+    line-height: 1.7;
+}
+
+h1 {
+    font-size: clamp(1.1rem, 3vw, 1.7rem);
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+h3, h4, h5, h6 {
+    font-size: 0.8rem;
+}
+
+a {
+    color: #5a4bcf;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #d64f82;
+}
+
+.container {
+    max-width: 1100px;
+}
+
+.card,
+.pixel-card {
+    background: var(--pixel-paper);
+    border: var(--pixel-border);
+    border-radius: 0 !important;
+    box-shadow: var(--pixel-shadow);
+    color: var(--pixel-ink);
+}
+
+.card-header {
+    background: var(--pixel-blue);
+    border-bottom: var(--pixel-border);
+    border-radius: 0 !important;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    line-height: 1.8;
+    padding: 14px;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.btn {
+    border: var(--pixel-border);
+    border-radius: 0 !important;
+    box-shadow: 3px 3px 0 var(--pixel-ink);
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--pixel-ink);
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 3px var(--pixel-bg), 0 0 0 6px #6c5ce7;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid var(--pixel-ink);
+    border-radius: 0 !important;
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+}
+
+.badge {
+    border: 2px solid var(--pixel-ink);
+    border-radius: 0 !important;
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+}
+
+hr {
+    border-top: 2px dashed var(--pixel-muted);
+    opacity: 0.65;
+}
+
+footer {
+    color: var(--pixel-muted);
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 19px;
+    }
+
+    .card,
+    .pixel-card {
+        box-shadow: 3px 3px 0 var(--pixel-ink);
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+}

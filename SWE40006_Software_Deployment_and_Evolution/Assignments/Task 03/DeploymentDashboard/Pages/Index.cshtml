@@ -1,0 +1,308 @@
+﻿
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Deployment Dashboard";
+}
+
+<div class="container dashboard py-4">
+    <header class="dashboard-header mb-4">
+        <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+            <div>
+                <p class="pixel-eyebrow mb-2">SYSTEM CONSOLE // 001</p>
+                <h1>Deployment<br />Diagnostics</h1>
+                <p class="dashboard-subtitle mb-0">
+                    A retro control panel for application deployment.
+                </p>
+            </div>
+            <div class="pixel-stamp" aria-label="Development build">
+                BUILD<br />001
+            </div>
+        </div>
+    </header>
+
+    <div class="pixel-divider mb-4"></div>
+
+    <section aria-labelledby="overview-heading">
+        <h2 id="overview-heading" class="section-heading mb-3">
+            <span class="section-marker">■</span> SYSTEM OVERVIEW
+        </h2>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <article class="status-card status-card-pink h-100">
+                    <div class="status-label">APP STATUS</div>
+                    <div class="status-value">RUNNING</div>
+                    <div class="status-tag">LOCAL PAGE LOADED</div>
+                    <p class="status-description">
+                        The dashboard page has rendered in the browser.
+                    </p>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="status-card status-card-blue h-100">
+                    <div class="status-label">FRAMEWORK</div>
+                    <div class="status-value">ASP.NET CORE</div>
+                    <div class="status-tag">C# / RAZOR PAGES</div>
+                    <p class="status-description">
+                        The web application is built with C# and Razor Pages.
+                    </p>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="status-card status-card-green h-100">
+                    <div class="status-label">TARGET PLATFORM</div>
+                    <div class="status-value">AZURE</div>
+                    <div class="status-tag">DEPLOYMENT PENDING</div>
+                    <p class="status-description">
+                        Azure is the target platform; deployment must be verified separately.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-panel mt-5" aria-labelledby="environment-heading">
+        <div class="panel-heading">
+            <h2 id="environment-heading" class="section-heading mb-0">
+                ENVIRONMENT DATA
+            </h2>
+            <span class="panel-code">ENV_01</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-key">APPLICATION</span>
+            <span class="info-value">DeploymentDashboard</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-key">CURRENT ENVIRONMENT</span>
+            <span class="info-value">
+                <span class="environment-chip">LOCAL DEVELOPMENT</span>
+            </span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-key">TECHNOLOGY</span>
+            <span class="info-value">C# / ASP.NET Core</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-key">PAGE CHECK</span>
+            <span class="info-value">RENDERED IN BROWSER</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-key">AZURE DEPLOYMENT</span>
+            <span class="info-value">NOT YET VERIFIED</span>
+        </div>
+    </section>
+
+    <footer class="dashboard-footer mt-4">
+        <span>PIXEL DEPLOYMENT CONSOLE</span>
+        <span>LOCAL BUILD // 001</span>
+    </footer>
+</div>
+
+<style>
+    .dashboard {
+        max-width: 1100px;
+        color: var(--pixel-ink);
+    }
+
+    .dashboard-header h1 {
+        font-size: clamp(1.1rem, 3vw, 1.65rem);
+        margin-bottom: 16px;
+        overflow-wrap: anywhere;
+    }
+
+    .pixel-eyebrow,
+    .section-heading,
+    .status-label,
+    .status-tag,
+    .pixel-stamp,
+    .panel-code,
+    .info-key,
+    .environment-chip,
+    .dashboard-footer {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.58rem;
+        line-height: 1.9;
+    }
+
+    .pixel-eyebrow {
+        color: #716b83;
+        letter-spacing: 1px;
+    }
+
+    .dashboard-subtitle {
+        color: var(--pixel-muted);
+        font-size: 1.2rem;
+    }
+
+    .pixel-stamp {
+        padding: 14px;
+        background: var(--pixel-yellow);
+        border: var(--pixel-border);
+        box-shadow: 4px 4px 0 var(--pixel-ink);
+        text-align: center;
+        line-height: 2.2;
+        flex-shrink: 0;
+    }
+
+    .pixel-divider {
+        border-top: 3px dashed var(--pixel-ink);
+    }
+
+    .section-heading {
+        font-size: 0.7rem;
+        margin-bottom: 0;
+    }
+
+    .section-marker {
+        color: #d64f82;
+        margin-right: 8px;
+    }
+
+    .status-card {
+        padding: 20px;
+        border: var(--pixel-border);
+        border-radius: 0 !important;
+        box-shadow: var(--pixel-shadow);
+        color: var(--pixel-ink);
+    }
+
+    .status-card-pink {
+        background: #ffe0e9;
+    }
+
+    .status-card-blue {
+        background: #dceeff;
+    }
+
+    .status-card-green {
+        background: #ddf6df;
+    }
+
+    .status-label {
+        margin-bottom: 16px;
+        color: #5e5870;
+    }
+
+    .status-value {
+        font-family: 'Press Start 2P', monospace;
+        font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+        line-height: 1.9;
+        overflow-wrap: anywhere;
+        margin-bottom: 14px;
+    }
+
+    .status-tag {
+        display: inline-block;
+        padding: 5px 8px;
+        border: 2px solid var(--pixel-ink);
+        background: #fffdf6;
+        font-size: 0.48rem;
+        overflow-wrap: anywhere;
+        margin-bottom: 16px;
+    }
+
+    .status-description {
+        font-size: 1.1rem;
+        line-height: 1.35;
+        margin-bottom: 0;
+    }
+
+    .info-panel {
+        background: var(--pixel-paper);
+        border: var(--pixel-border);
+        border-radius: 0 !important;
+        padding: 22px;
+        box-shadow: var(--pixel-shadow);
+    }
+
+    .panel-heading {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 16px;
+        border-bottom: 3px solid var(--pixel-ink);
+        margin-bottom: 4px;
+    }
+
+    .panel-code {
+        background: var(--pixel-yellow);
+        border: 2px solid var(--pixel-ink);
+        padding: 5px 8px;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 16px 0;
+        border-bottom: 2px dashed #ded8e8;
+    }
+
+    .info-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .info-key {
+        color: var(--pixel-muted);
+        flex: 1;
+        overflow-wrap: anywhere;
+    }
+
+    .info-value {
+        text-align: right;
+        font-weight: bold;
+        overflow-wrap: anywhere;
+        max-width: 55%;
+    }
+
+    .environment-chip {
+        display: inline-block;
+        background: var(--pixel-green);
+        border: 2px solid var(--pixel-ink);
+        padding: 4px 8px;
+        font-size: 0.48rem;
+    }
+
+    .dashboard-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px;
+        color: var(--pixel-muted);
+        font-size: 0.48rem;
+    }
+
+    @@media (max-width: 576px) {
+        .status-card {
+            padding: 16px;
+            box-shadow: 3px 3px 0 var(--pixel-ink);
+        }
+
+        .info-panel {
+            padding: 16px;
+            box-shadow: 3px 3px 0 var(--pixel-ink);
+        }
+
+        .info-row {
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .info-value {
+            text-align: left;
+            max-width: 100%;
+        }
+    }
+</style>
