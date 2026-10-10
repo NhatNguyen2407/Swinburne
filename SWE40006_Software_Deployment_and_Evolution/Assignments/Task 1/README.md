@@ -1,4 +1,4 @@
-# Task 1 — HelloWiX
+# Task 1 - HelloWiX
 
 This folder contains the Task 1 source projects and assignment documentation.
 
