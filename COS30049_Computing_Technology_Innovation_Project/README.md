@@ -1,4 +1,4 @@
-# SigmaSecurity — COS30049 Computing Technology Innovation Project
+# SigmaSecurity - COS30049 Computing Technology Innovation Project
 
 **University:** Swinburne University of Technology · **Term:** Spring 2026 · **Team:** HN2_3  
 **Project type:** Collaborative university coursework · **My role:** Front-End Development & UX/UI  
@@ -40,8 +40,8 @@ The canonical source and full Git history remain in the **original group reposit
 
 This personal portfolio directory intentionally contains **documentation only**:
 
-- [CONTRIBUTIONS.md](./CONTRIBUTIONS.md) — verified contribution audit and upstream commit evidence
-- [PORTFOLIO_ENTRY.md](./PORTFOLIO_ENTRY.md) — concise, CV/portfolio-ready descriptions
+- [CONTRIBUTIONS.md](./CONTRIBUTIONS.md) - verified contribution audit and upstream commit evidence
+- [PORTFOLIO_ENTRY.md](./PORTFOLIO_ENTRY.md) - concise, CV/portfolio-ready descriptions
 
 ## Attribution and publishing
 
