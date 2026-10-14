@@ -4,6 +4,8 @@ A central repository for coursework, assignments, practical exercises, and proje
 
 ## Navigate the repository
 
+- **[COS30049 — Computing Technology Innovation Project](./COS30049_Computing_Technology_Innovation_Project/README.md)**  
+  Original group-project attribution, contributor evidence links, and documentation (source code not mirrored).
 - **[SWE40006 — Software Deployment and Evolution](./SWE40006_Software_Deployment_and_Evolution/README.md)**  
   Course notes, tutorials, supporting deployment guides, and Task 1 project documentation.
 
