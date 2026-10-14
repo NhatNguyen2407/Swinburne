@@ -1,6 +1,6 @@
-# SigmaSecurity — Portfolio & CV Entry
+# SigmaSecurity - Portfolio & CV Entry
 
-**Project:** SigmaSecurity — AI-Assisted Spam & Malware Detection Prototype  
+**Project:** SigmaSecurity - AI-Assisted Spam & Malware Detection Prototype  
 **Context:** COS30049, Swinburne University of Technology · Group project · Spring 2026  
 **Role:** Front-End Developer & UX/UI Contributor  
 **Stack:** React, JavaScript, CSS, React Router, Axios, Chart.js; FastAPI and scikit-learn used by the wider team  
@@ -8,7 +8,7 @@
 
 ## Resume version (concise)
 
-**Front-End Developer & UX/UI Contributor — SigmaSecurity** | University Group Project | Mar–Apr 2026
+**Front-End Developer & UX/UI Contributor - SigmaSecurity** | University Group Project | Mar-Apr 2026
 
 - Developed a React-based web interface with reusable navigation components, multi-page routing and light/dark theme support.
 - Built a text-threat scanner UI that submits inputs to a FastAPI endpoint using Axios and displays classification results.
