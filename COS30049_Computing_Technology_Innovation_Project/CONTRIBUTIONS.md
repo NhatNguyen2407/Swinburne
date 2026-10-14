@@ -1,4 +1,4 @@
-# Verified individual contributions — SigmaSecurity
+# Verified individual contributions - SigmaSecurity
 
 **Contributor:** Nguyen Huyen Minh Nhat · [@NhatNguyen2407](https://github.com/NhatNguyen2407)  
 **Role:** Front-End Development & UX/UI (also shown in the team's About page)  
@@ -61,4 +61,4 @@ This **collaborative university coursework** remains credited to the originating
 
 ## Recommended concise attribution
 
-> **Front-End Developer & UX/UI Contributor — SigmaSecurity (COS30049 Group Project, Spring 2026).** Built and refined a React interface for a machine-learning-assisted security prototype, including routing, responsive-style layouts, scanner input/output, Axios API integration and a Chart.js analytics dashboard. Contributed 17 non-merge Git commits (19 including merges) in the archived upstream history.
+> **Front-End Developer & UX/UI Contributor - SigmaSecurity (COS30049 Group Project, Spring 2026).** Built and refined a React interface for a machine-learning-assisted security prototype, including routing, responsive-style layouts, scanner input/output, Axios API integration and a Chart.js analytics dashboard. Contributed 17 non-merge Git commits (19 including merges) in the archived upstream history.
