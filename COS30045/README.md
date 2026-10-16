@@ -15,6 +15,7 @@ This directory separates practical lab work, assessment materials, and project d
 ### Current materials
 
 - [Week 01 lab](Labs/Week01/) — introductory data processing using KNIME
+- [Week 03 lab](Labs/Week03/) — explanatory TV energy data-story website, chart summaries, storyboard, and AI declaration
 - [Demo 01 assessment folder](Assignments/Demo_01/) — workflow, source dataset, exported brand-count data, and supporting documents
 - [Project overview](Project/README.md) — project components and development structure
 
