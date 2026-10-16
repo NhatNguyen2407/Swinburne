@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three D3 charts for COS30045 Week 5: television energy, electricity prices, and screen sizes.">
+  <title>Week 05 - Three ways to read data</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="js/bar-chart.js" defer></script>
+  <script src="js/line-chart.js" defer></script>
+  <script src="js/donut-chart.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">COS30045 <span>/ WEEK 05</span></a>
+      <nav aria-label="Exercise navigation">
+        <a href="#bar">5.1 Bar</a>
+        <a href="#line">5.2 Line</a>
+        <a href="#donut">5.3 Donut</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top" class="wrap">
+    <section class="intro">
+      <p class="eyebrow">Data visualisation / D3 multi-chart webpage</p>
+      <h1>Three ways to read the data.</h1>
+      <p class="intro-text">Different questions need different visualisations. This page uses a vertical bar chart to compare categories, a line and scatter chart to show change over time, and a donut chart to show proportions.</p>
+    </section>
+
+    <section id="bar" class="exercise" aria-labelledby="bar-title">
+      <div class="story">
+        <p class="eyebrow">01 / Exercise 5.1</p>
+        <h2 id="bar-title">How does energy use compare for 55-inch TVs?</h2>
+        <p>I compared the average annual energy figure on the labels of similarly sized TVs, grouped by screen technology. Using one size makes the comparison more meaningful than mixing large and small screens.</p>
+        <p class="note"><strong id="bar-total">736 records</strong> in the 55-inch group.</p>
+      </div>
+      <div class="figure-panel">
+        <div class="panel-top"><strong>Average labelled consumption</strong><span>kWh/year</span></div>
+        <div id="bar-chart" class="responsive-svg-container" role="region" aria-label="Average annual label energy use by 55-inch TV technology"></div>
+        <p class="caption">Figure 1. Mean labelled annual energy consumption. Differences between these groups do not isolate the effect of screen technology.</p>
+      </div>
+    </section>
+
+    <section id="line" class="exercise" aria-labelledby="line-title">
+      <div class="story">
+        <p class="eyebrow">02 / Exercise 5.2</p>
+        <h2 id="line-title">Electricity prices fluctuate over time.</h2>
+        <p>Australia's average annual wholesale spot price varies considerably between 1998 and 2024. The points show each recorded year; the connected line makes the trend easier to follow.</p>
+        <p class="note">The supplied series reaches <strong>$144.50/MWh in 2022</strong>, compared with <strong>$30.25/MWh in 2011</strong>.</p>
+      </div>
+      <div class="figure-panel">
+        <div class="panel-top"><strong>Australian wholesale electricity spot price</strong><span>AUD / MWh</span></div>
+        <div id="line-chart" class="responsive-svg-container" role="region" aria-label="Scatter plot and line chart of Australian average annual spot prices from 1998 to 2024"></div>
+        <p class="caption">Figure 2. The course dataset's average excludes Tasmania and Snowy. Annual spot prices are not household retail electricity tariffs.</p>
+      </div>
+    </section>
+
+    <section id="donut" class="exercise" aria-labelledby="donut-title">
+      <div class="story">
+        <p class="eyebrow">03 / Exercise 5.3</p>
+        <h2 id="donut-title">Medium screens make up the largest group.</h2>
+        <p>I divided the filtered TV registrations into small, medium and large screen categories. A donut chart shows how much each category contributes to the whole dataset.</p>
+        <p class="note">Small: under 42 inches. Medium: 42 to under 65 inches. Large: 65 inches and over.</p>
+      </div>
+      <div class="figure-panel">
+        <div class="panel-top"><strong>TV registration records by screen size</strong><span>Share of 4,508</span></div>
+        <div id="donut-chart" class="responsive-svg-container" role="region" aria-label="Donut chart showing small, medium, and large television registrations"></div>
+        <p class="caption">Figure 3. The three groups describe available TV registration records listed for Australia, not the number of TVs sold.</p>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div><p class="eyebrow">Data &amp; method</p><h2>One page, three purposes.</h2></div>
+      <div><p>The first and third charts use summaries from the television dataset supplied for the KNIME exercises. The second chart uses the course's <code>ARE_Spot_Prices.csv</code> and its average-price column.</p>
+        <p>D3 loads the CSV files, converts fields to numbers, and binds the rows to SVG elements. Axes, scales, a line generator, a pie layout and an arc generator are implemented in separate scripts.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>COS30045 / Data Processing and Visualisation</span><span>Week 05 / SVG + D3</span></div></footer>
+</body>
+</html>
