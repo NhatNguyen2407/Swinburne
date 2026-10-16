@@ -81,3 +81,12 @@ The report will include student and unit details, declared task level, deploymen
 - Only verified outcomes will be reported as completed.
 - No account secrets, tokens or generated build output will be committed.
 - Screenshots and report content must be collected from the actual development and deployment steps.
+
+### Task 3.1 diagnostic log - 16 October 2026, follow-up
+
+- User-provided terminal log confirms `Hosting environment: Production` when running `dotnet run --urls http://localhost:5081` from source.
+- ASP.NET Core warned: `Static Web Assets are not enabled` outside published output.
+- Requests for `dotnetcoresample.styles.css`, `Components/Layout/ReconnectModal.razor.js` and `_framework/blazor.web.js` resulted in `FileNotFoundException`.
+- Separate HTTPS redirection warning: no HTTPS port was configured for local HTTP use.
+- Recommended local corrective action (not yet verified): stop the app and run `$env:ASPNETCORE_ENVIRONMENT = "Development"`, `$env:DOTNET_ENVIRONMENT = "Development"`, then `dotnet run --no-launch-profile --urls "http://localhost:5081"`.
+- Awaiting terminal log showing the Development environment and a correctly styled browser page before marking Task 3.1 local testing complete.
