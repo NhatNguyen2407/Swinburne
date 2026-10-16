@@ -5,7 +5,7 @@ Individual deployment portfolio for SWE40006 Software Deployment and Evolution.
 - Due: 19 October 2026, 23:59
 - Target: Task 3.3 (High Distinction), including all lower-level tasks
 - Submission: a PDF or Word deployment report through Canvas
-- Status: local environment prepared; Azure deployment not started
+- Status: Task 3.1 local HTTP response confirmed, static asset rendering still under investigation; Azure deployment not started
 
 ## Task requirements
 
@@ -42,7 +42,16 @@ dotnet build
 dotnet run --urls http://localhost:5081
 ```
 
-Open http://localhost:5081 in a browser. This check must be verified on the local machine; no local build or run outcome has been confirmed in this repository.
+Open http://localhost:5081 in a browser.
+
+### Task 3.1 local test log - 16 October 2026
+
+- Observed: the sample served the Home page and `Hello, world!` at localhost:5081.
+- Observed: the page was unstyled; the standard Blazor error UI text was visible.
+- Important: without CSS, the default Blazor error UI appears even if no runtime error occurred. Its visibility alone is not proof of a runtime exception.
+- Suspected root cause: CSS/JavaScript static assets failed to load, potentially because the project ran without `ASPNETCORE_ENVIRONMENT=Development`. This remains unconfirmed.
+- Next verification: restart the local app with the Development environment selected; review Network and Console if assets still fail.
+- No successful fully styled local render, `dotnet build` log or Azure deployment has been verified yet.
 
 ## Task 3.2 - C# application
 
