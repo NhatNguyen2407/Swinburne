@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SVG house | Exercise 4.1</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="shell"><a class="monogram" href="index.html">COS30045 / WEEK 04</a><nav aria-label="Exercises"><a class="current" aria-current="page" href="house.html">4.1 / SVG house</a><a href="dom.html">4.2 / DOM</a><a href="index.html">4.3–4.7 / D3 chart</a></nav></div></header>
+<main class="shell">
+  <section class="intro intro-small">
+    <p class="eyebrow">Exercise 4.1 / SVG primitives</p><h1>A small house, drawn with coordinates.</h1>
+    <p class="lead">I used SVG shapes rather than an image editor. The two windows share styling inside a group and are positioned with <code>translate()</code>.</p>
+  </section>
+  <section class="art-card">
+    <h2>01 / The drawing</h2>
+    <div class="drawing-frame">
+      <svg id="house" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="house-title house-desc">
+        <title id="house-title">House and garden made of SVG shapes</title>
+        <desc id="house-desc">A cream house with green door, two windows, chimney, garden flowers, sun, tree and path.</desc>
+        <rect x="0" y="0" width="960" height="520" fill="#eff2eb"/>
+        <circle cx="770" cy="88" r="43" fill="#edc87b"/>
+        <path d="M0 350 Q250 285 480 355 T960 342 V520 H0Z" fill="#c8d6c0"/>
+        <rect x="265" y="184" width="438" height="244" rx="4" fill="#fffaf1" stroke="#1f4147" stroke-width="5"/>
+        <rect x="600" y="100" width="53" height="93" fill="#a9634b" stroke="#1f4147" stroke-width="4"/>
+        <polygon points="235,197 488,57 732,197" fill="#b96e56" stroke="#1f4147" stroke-width="6" stroke-linejoin="round"/>
+        <polyline points="253,197 488,73 714,197" fill="none" stroke="#efd2a7" stroke-width="7" stroke-linecap="round"/>
+        <g id="windows" fill="#d7ece7" stroke="#1f4147" stroke-width="5">
+          <g transform="translate(316 245)">
+            <rect x="0" y="0" width="109" height="99" rx="3"/>
+            <line x1="54.5" y1="0" x2="54.5" y2="99"/><line x1="0" y1="49.5" x2="109" y2="49.5"/>
+          </g>
+          <g transform="translate(540 245)">
+            <rect x="0" y="0" width="109" height="99" rx="3"/>
+            <line x1="54.5" y1="0" x2="54.5" y2="99"/><line x1="0" y1="49.5" x2="109" y2="49.5"/>
+          </g>
+        </g>
+        <path d="M448 428 V323 Q448 306 465 306 H500 Q517 306 517 323 V428Z" fill="#2f7274" stroke="#1f4147" stroke-width="5"/>
+        <circle cx="501" cy="372" r="5" fill="#edc87b"/>
+        <path d="M440 428 L400 520 H568 L524 428Z" fill="#dfc4a2"/>
+        <g stroke="#416d4b" stroke-width="5" stroke-linecap="round">
+          <line x1="131" y1="422" x2="131" y2="321"/>
+          <line x1="814" y1="422" x2="814" y2="335"/>
+        </g>
+        <ellipse cx="131" cy="310" rx="79" ry="63" fill="#639570"/>
+        <ellipse cx="814" cy="326" rx="72" ry="56" fill="#639570"/>
+        <g fill="#b96e56">
+          <circle cx="206" cy="446" r="11"/><circle cx="224" cy="437" r="11"/><circle cx="242" cy="446" r="11"/>
+          <circle cx="748" cy="450" r="11"/><circle cx="766" cy="441" r="11"/><circle cx="784" cy="450" r="11"/>
+        </g>
+        <g stroke="#416d4b" stroke-width="3">
+          <line x1="224" y1="449" x2="224" y2="476"/><line x1="766" y1="453" x2="766" y2="482"/>
+        </g>
+        <text x="480" y="486" font-size="19" text-anchor="middle" fill="#1f4147" font-family="Arial, sans-serif">A QUIET PLACE</text>
+      </svg>
+    </div>
+    <p class="figure-caption">Figure 1. A house with rectangles, a polygon, circles, ellipses, lines, a polyline, paths, text and a grouped pair of windows.</p>
+  </section>
+  <section class="art-card">
+    <h2>02 / Coordinate notes</h2>
+    <p class="muted">This annotated drawing identifies coordinates used in the SVG source. Positions start at the top-left of the <code>960 × 520</code> viewBox.</p>
+    <div class="drawing-frame"><img src="assets/house-annotated.svg" alt="Annotated version of the house diagram showing shape attributes including rect x and y, circle center and radius, polygon points, line endpoints and window group translations."></div>
+    <p class="figure-caption">Figure 2. Coordinate annotations for the drawing. The diagram is an SVG annotation rather than a browser screenshot.</p>
+  </section>
+  <section class="explainer">
+    <div><p class="eyebrow">03 / Browser inspection</p><h2>The group is in the DOM.</h2></div>
+    <div><p>The <code>g#house</code> element is part of the page's SVG DOM. To inspect the actual nodes, right-click a window and choose Inspect in the browser developer tools. The window group is <code>g#windows</code>, with two child groups translated to different locations.</p>
+    <pre class="snippet" id="window-dom" aria-label="Window group DOM markup"></pre>
+    <p class="muted">The code above is read from the live SVG element on this page, rather than pasted as an image of DevTools.</p></div>
+  </section>
+</main>
+<footer><div class="shell"><span>Exercise 4.1 / Draw SVGs</span><a href="dom.html">Next / Exercise 4.2 →</a></div></footer>
+<script>
+const group = document.querySelector("#windows");
+document.querySelector("#window-dom").textContent = group.outerHTML;
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A D3 bar chart of Australian television registration records by brand.">
+  <title>Television brands | COS30045 Week 04</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="js/chart.js" defer></script>
+</head>
+<body>
+<header class="topbar"><div class="shell">
+  <a class="monogram" href="index.html">COS30045 / WEEK 04</a>
+  <nav aria-label="Exercises"><a href="house.html">4.1 / SVG house</a><a href="dom.html">4.2 / DOM</a><a class="current" aria-current="page" href="index.html">4.3–4.7 / D3 chart</a></nav>
+</div></header>
+<main class="shell">
+  <section class="intro">
+    <p class="eyebrow">Exercise 4.3–4.7 / Data-driven SVG</p>
+    <h1>Which TV brands appear most often?</h1>
+    <p class="lead">A horizontal bar chart of available television registration records for the Australian market, grouped by brand. The rectangles and labels are generated from a CSV with D3.</p>
+    <div class="statistics"><span><strong>25</strong> brands</span><span><strong>4,240</strong> records in displayed groups</span><span>Brands with at least <strong>20</strong> records</span></div>
+  </section>
+  <section class="chart-card" aria-labelledby="chart-heading">
+    <div class="chart-header">
+      <div><p class="eyebrow">01 / Brand registrations</p><h2 id="chart-heading">Models by brand</h2></div>
+      <div class="actions" role="group" aria-label="Number of displayed brands">
+        <button class="active" id="all-brands" type="button" aria-pressed="true">All 25</button>
+        <button id="top-ten" type="button" aria-pressed="false">Top 10</button>
+      </div>
+    </div>
+    <p class="chart-note" id="chart-description">Sorted by the number of registration records. Hover over a bar to inspect its value.</p>
+    <div class="responsive-svg-container" id="bar-chart" role="region" aria-label="Horizontal D3 bar chart" tabindex="0">
+      <p id="status" role="status">Loading chart from CSV…</p>
+    </div>
+    <p class="chart-footer">Source: <code>2026 TV Data.knwf</code> → <code>tvBrandCount.csv</code> (provided Week 4 resources). Count refers to rows, not units sold.</p>
+  </section>
+  <section class="explainer">
+    <div><p class="eyebrow">02 / What D3 does</p><h2>From a table to SVG</h2></div>
+    <div>
+      <p>The CSV is loaded with <code>d3.csv()</code>, with the count converted into a number. D3 sorts the records, maps counts with <code>scaleLinear()</code>, and positions each brand using <code>scaleBand()</code>. A group holds the bar, brand name, and numeric label together.</p>
+      <p>This also makes it straightforward to display the full data or focus on the ten brands with the highest counts without manually drawing new rectangles.</p>
+      <a class="text-link" href="house.html">See the SVG drawing exercise →</a>
+    </div>
+  </section>
+</main>
+<footer><div class="shell"><span>Data Processing and Visualisation / Swinburne</span><span>Week 04 / SVG &amp; D3</span></div></footer>
+</body>
+</html>

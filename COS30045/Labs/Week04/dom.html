@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOM changes with D3 | Exercise 4.2</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="js/dom.js" defer></script>
+</head>
+<body>
+<header class="topbar"><div class="shell"><a class="monogram" href="index.html">COS30045 / WEEK 04</a><nav aria-label="Exercises"><a href="house.html">4.1 / SVG house</a><a class="current" aria-current="page" href="dom.html">4.2 / DOM</a><a href="index.html">4.3–4.7 / D3 chart</a></nav></div></header>
+<main class="shell">
+<section class="intro intro-small"><p class="eyebrow">Exercise 4.2 / Working with the DOM</p><h1>Let D3 change the page.</h1><p class="lead">This short exercise uses D3 to select an existing heading, add a paragraph and append an SVG rectangle.</p></section>
+<section class="art-card"><h2 id="changing-heading">01 / Selecting an element</h2><p>D3 applies a new colour to the heading above using <code>select()</code> and <code>style()</code>.</p></section>
+<section class="art-card"><h2>02 / Appending a paragraph</h2><div class="message-container"><p>The message below is inserted after the page loads.</p></div></section>
+<section class="art-card"><h2>03 / Appending an SVG rectangle</h2><div class="drawing-frame"><svg id="rectangle-demo" role="img" aria-label="SVG rectangle inserted into a blank canvas by D3" viewBox="0 0 600 160"></svg></div><p class="figure-caption">The rectangle starts at (50, 50), and has width 100 and height 30.</p></section>
+<p id="dom-status" class="muted" role="status">Loading the D3 examples…</p>
+</main>
+<footer><div class="shell"><span>Exercise 4.2 / D3 and HTML elements</span><a href="index.html">Next / D3 bar chart →</a></div></footer>
+</body></html>

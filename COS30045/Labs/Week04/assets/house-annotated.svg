@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="annotated-title">
+<title id="annotated-title">SVG house annotated with example shape coordinates</title>
+<rect width="960" height="640" fill="#eff2eb"/>
+<rect x="0" y="0" width="960" height="520" fill="#e5ece5"/>
+<circle cx="770" cy="88" r="43" fill="#edc87b"/>
+<path d="M0 350 Q250 285 480 355 T960 342 V520 H0Z" fill="#c8d6c0"/>
+<rect x="265" y="184" width="438" height="244" rx="4" fill="#fffaf1" stroke="#1f4147" stroke-width="5"/>
+<rect x="600" y="100" width="53" height="93" fill="#a9634b" stroke="#1f4147" stroke-width="4"/>
+<polygon points="235,197 488,57 732,197" fill="#b96e56" stroke="#1f4147" stroke-width="6"/>
+<polyline points="253,197 488,73 714,197" fill="none" stroke="#efd2a7" stroke-width="7"/>
+<g fill="#d7ece7" stroke="#1f4147" stroke-width="5">
+<g transform="translate(316 245)"><rect width="109" height="99" rx="3"/><line x1="54.5" y1="0" x2="54.5" y2="99"/><line x1="0" y1="49.5" x2="109" y2="49.5"/></g>
+<g transform="translate(540 245)"><rect width="109" height="99" rx="3"/><line x1="54.5" y1="0" x2="54.5" y2="99"/><line x1="0" y1="49.5" x2="109" y2="49.5"/></g>
+</g>
+<path d="M448 428 V323 Q448 306 465 306 H500 Q517 306 517 323 V428Z" fill="#2f7274" stroke="#1f4147" stroke-width="5"/>
+<circle cx="501" cy="372" r="5" fill="#edc87b"/>
+<path d="M440 428 L400 520 H568 L524 428Z" fill="#dfc4a2"/>
+<line x1="131" y1="422" x2="131" y2="321" stroke="#416d4b" stroke-width="5"/>
+<ellipse cx="131" cy="310" rx="79" ry="63" fill="#639570"/>
+<ellipse cx="814" cy="326" rx="72" ry="56" fill="#639570"/>
+<g font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#20383e">
+<rect x="18" y="12" width="251" height="35" rx="5" fill="white" opacity=".88"/><text x="26" y="35">viewBox = 0 0 960 520</text>
+<path d="M619 74 L772 88" fill="none" stroke="#20383e" stroke-width="2"/><text x="490" y="62">circle cx=770 cy=88 r=43</text>
+<path d="M384 77 L488 57" fill="none" stroke="#20383e" stroke-width="2"/><text x="10" y="78">polygon top point (488,57)</text>
+<path d="M104 203 L265 184" fill="none" stroke="#20383e" stroke-width="2"/><text x="14" y="196">rect x=265 y=184</text>
+<path d="M252 291 L316 245" fill="none" stroke="#20383e" stroke-width="2"/><text x="12" y="294">g translate(316,245)</text>
+<path d="M824 271 L649 245" fill="none" stroke="#20383e" stroke-width="2"/><text x="689" y="266">g translate(540,245)</text>
+<path d="M790 376 L814 326" fill="none" stroke="#20383e" stroke-width="2"/><text x="685" y="393">ellipse (814,326)</text>
+<path d="M159 465 L131 422" fill="none" stroke="#20383e" stroke-width="2"/><text x="16" y="477">line (131,422) to (131,321)</text>
+<text x="24" y="554">Other elements in the drawing: path (hill/door), polyline (roof trim), text (garden sign).</text>
+<text x="24" y="589" font-size="13" font-weight="400">Reference annotation of source SVG coordinates; not a screenshot of the browser.</text>
+</g></svg>
