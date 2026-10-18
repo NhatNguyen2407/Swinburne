@@ -1,10 +1,10 @@
 # Task 4 Report - evidence and submission notes
 
-Student: Nguyen Huyen Minh Nhat  
-Student ID: 105550225  
-Unit: SWE40006 - Software Deployment and Evolution  
-Semester: Fall 2026  
-Due date: 2026, Oct 26  
+Student: Nguyen Huyen Minh Nhat\
+Student ID: 105550225\
+Unit: SWE40006 - Software Deployment and Evolution\
+Semester: Fall 2026\
+Due date: 2026, Oct 26\
 Submission date: 2026, Oct 26
 
 ## Level attempted
@@ -19,8 +19,8 @@ The Docker `hello-world` container ran successfully.
 ## Task 4.2 - Python HTTP application
 A Python standard-library HTTP server returns `Hello from my Python Docker app!` on port 8000. Its image was built as `python-hello-app:1.0` and run with host port 8000 published. The local response was verified with curl.
 
-Docker Hub image: https://hub.docker.com/r/nhatnguyen2407/swe40006_task04  
-Tag: `nhatnguyen2407/swe40006_task04:1.0`  
+Docker Hub image: https://hub.docker.com/r/nhatnguyen2407/swe40006_task04\
+Tag: `nhatnguyen2407/swe40006_task04:1.0`\
 Recorded digest: `sha256:f04eda66fbf6def85364370a61b439fbc3a35edb72443a70f6711046f048b941`
 
 A same-machine pull was reported successful. A pull from a separate physical Docker device still needs independent evidence.

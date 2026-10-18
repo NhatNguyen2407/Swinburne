@@ -1,4 +1,4 @@
-# COS30045 — Data Visualisation Project
+# COS30045 - Data Visualisation Project
 
 This directory is reserved for the development work associated with the **COS30045 Data Processing and Visualisation** project.
 
@@ -6,10 +6,10 @@ This directory is reserved for the development work associated with the **COS300
 
 The project work may include the following stages, as required by the unit:
 
-- **Stand-up 1 — Data exploration:** define the audience, purpose, and questions.
-- **Stand-up 2 — Data explanation:** develop and justify the visualisation design.
-- **Stand-up 3 — Programming:** implement the interactive visualisation.
-- **Stand-up 4 — Demonstration:** present and explain the completed work.
+- **Stand-up 1 - Data exploration:** define the audience, purpose, and questions.
+- **Stand-up 2 - Data explanation:** develop and justify the visualisation design.
+- **Stand-up 3 - Programming:** implement the interactive visualisation.
+- **Stand-up 4 - Demonstration:** present and explain the completed work.
 - **Final materials:** interactive visualisation, reflection, and required declarations.
 
 The exact deliverables and naming should follow the current unit instructions.

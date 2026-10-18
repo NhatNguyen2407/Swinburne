@@ -1,8 +1,8 @@
 # Verified individual contributions - SigmaSecurity
 
-**Contributor:** Nguyen Huyen Minh Nhat · [@NhatNguyen2407](https://github.com/NhatNguyen2407)  
-**Role:** Front-End Development & UX/UI (also shown in the team's About page)  
-**Original repository:** [COS30049-SUVHN/group-project-spr-2026-grp2_3](https://github.com/COS30049-SUVHN/group-project-spr-2026-grp2_3)  
+**Contributor:** Nguyen Huyen Minh Nhat · [@NhatNguyen2407](https://github.com/NhatNguyen2407)\
+**Role:** Front-End Development & UX/UI (also shown in the team's About page)\
+**Original repository:** [COS30049-SUVHN/group-project-spr-2026-grp2_3](https://github.com/COS30049-SUVHN/group-project-spr-2026-grp2_3)\
 **Verification source:** user-supplied complete Git Bundle (`main` at `c120941596841bce34481e1579c4ef6490ecac9e`).
 
 ## Verification summary

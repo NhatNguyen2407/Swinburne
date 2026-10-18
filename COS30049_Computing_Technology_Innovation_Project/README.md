@@ -1,8 +1,8 @@
 # SigmaSecurity - COS30049 Computing Technology Innovation Project
 
-**University:** Swinburne University of Technology · **Term:** Spring 2026 · **Team:** HN2_3  
-**Project type:** Collaborative university coursework · **My role:** Front-End Development & UX/UI  
-**Contributor:** [Nguyen Huyen Minh Nhat (@NhatNguyen2407)](https://github.com/NhatNguyen2407)  
+**University:** Swinburne University of Technology · **Term:** Spring 2026 · **Team:** HN2_3\
+**Project type:** Collaborative university coursework · **My role:** Front-End Development & UX/UI\
+**Contributor:** [Nguyen Huyen Minh Nhat (@NhatNguyen2407)](https://github.com/NhatNguyen2407)\
 **Original project:** [COS30049-SUVHN/group-project-spr-2026-grp2_3](https://github.com/COS30049-SUVHN/group-project-spr-2026-grp2_3) *(course-organization access may be required)*
 
 ## Project overview
@@ -22,7 +22,7 @@ My contribution was primarily **frontend engineering and UX/UI**:
 - Built an analytics dashboard UI with Chart.js visualizations and added frontend error-boundary handling.
 - Iteratively refined navigation, styling, components, and frontend integration across the project's development period.
 
-**Evidence:** The supplied complete Git Bundle contains **19 commits under my Git author identity (17 non-merge, 2 merge commits)** dated **10 March–24 April 2026**. See [CONTRIBUTIONS.md](./CONTRIBUTIONS.md) for feature-specific commit links, the full author commit log, and the verification method.
+**Evidence:** The supplied complete Git Bundle contains **19 commits under my Git author identity (17 non-merge, 2 merge commits)** dated **10 March-24 April 2026**. See [CONTRIBUTIONS.md](./CONTRIBUTIONS.md) for feature-specific commit links, the full author commit log, and the verification method.
 
 ## Technology
 
