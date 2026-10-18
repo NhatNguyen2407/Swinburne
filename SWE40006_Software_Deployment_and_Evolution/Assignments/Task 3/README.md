@@ -45,7 +45,7 @@ php -S localhost:5084
 - `evidence/assessments/` includes the actual assessment JSON exports from C# and PHP. Both record READY, score 86/100 and risk 14/100 for the sample release.
 - The two applications use a shared UI design, but their backend analysis logic is independent.
 - The C# Web App was deliberately deactivated. Its URL therefore returns Azure's stopped-app response.
-- The editable report, PDF submission copy and screenshots are kept separately pending their final addition to GitHub.
+- The editable Word report and PDF copy are already included in `report/`. The assessment JSON exports are included in `evidence/assessments/`. The report can be reviewed alongside the application source.
 
 DeployLens evaluates user-entered checklist values. Its score is intended for demonstration and does not establish that a real production release has passed security or infrastructure checks.
 
