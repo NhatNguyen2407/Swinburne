@@ -1,92 +1,54 @@
-# Task 3 - Azure App Service Deployment
+# SWE40006 - Deployment Portfolio Task 3
 
-Individual deployment portfolio for SWE40006 Software Deployment and Evolution.
+I completed Task 3.1 (Pass), Task 3.2 (Credit) and Task 3.3 (High Distinction attempt) using Azure App Service and VS Code.
 
-- Due: 19 October 2026, 23:59
-- Target: Task 3.3 (High Distinction), including all lower-level tasks
-- Submission: a PDF or Word deployment report through Canvas
-- Status: Task 3.1 local HTTP response confirmed, static asset rendering still under investigation; Azure deployment not started
+## Applications
 
-## Task requirements
+- `task-3.1-existing-app/` - Microsoft Azure Samples' existing ASP.NET Core app (upstream Git submodule). I used this application for the initial cloud deployment rather than presenting it as my own work.
+- `task-3.2-deploylens-csharp/` - DeployLens built with ASP.NET Core Minimal APIs on .NET 10. I deployed it, verified the web interface and API, and then stopped the Azure Web App.
+- `task-3.3-deploylens-php/` - A PHP 8.4 implementation of DeployLens with independent server-side validation and scoring, deployed to Azure App Service on Linux.
 
-- Task 3.1: deploy an existing web application to Azure.
-- Task 3.2: develop and deploy a C# application, then deactivate it.
-- Task 3.3: install PHP, develop a web application, and deploy it to Azure.
+## Azure resources
 
-## Local development environment
+- Resource group: `rg-swe40006-task3`
+- Sample: [SWE40006-Task3-Sample](https://swe40006-task3-sample-djhgdyhjgjc0gaht.southeastasia-01.azurewebsites.net) - Windows, .NET 10, Free F1
+- C#: [SWE40006-Task3-CS](https://swe40006-task3-cs-byhndyefgwdja0hw.southeastasia-01.azurewebsites.net) - Windows, .NET 10, Free F1; intentionally stopped after verification
+- PHP: [SWE40006-Task3-PHP](https://swe40006-task3-php-fdfdbvfucxhrdpeb.southeastasia-01.azurewebsites.net) - Linux, PHP 8.4, Free F1
 
-- Windows with Visual Studio and VS Code
-- .NET SDK 10.0.401
-- PHP 8.4.26 (CLI, x64, NTS)
-- Git
+The two .NET Web Apps share a Windows App Service Plan. The PHP Web App uses a separate Linux plan.
 
-These are locally installed tools, not proof of deployment.
+## Run locally
 
-## Task 3.1 - Existing application
-
-I am using Microsoft's existing .NET 10 sample application instead of presenting a sample as my own C# development.
-
-- Original source: https://github.com/Azure-Samples/dotnetcore-docs-hello-world
-- Author: Microsoft Azure Samples contributors
-- License: MIT (see the upstream repository)
-- Deployment target: Azure App Service (.NET 10)
-
-To run the original sample locally in a separate working directory:
+Clone this repository with its upstream sample submodule:
 
 ```powershell
-cd $HOME
-git clone https://github.com/Azure-Samples/dotnetcore-docs-hello-world.git task3-existing-app
-cd task3-existing-app
-dotnet restore
-dotnet build
-dotnet run --urls http://localhost:5081
+git clone --recurse-submodules https://github.com/NhatNguyen2407/Swinburne.git
 ```
 
-Open http://localhost:5081 in a browser.
+Run the C# application:
 
-### Task 3.1 local test log - 16 October 2026
+```powershell
+cd "SWE40006_Software_Deployment_and_Evolution/Assignments/Task 3/task-3.2-deploylens-csharp"
+dotnet restore
+dotnet run --urls http://localhost:5082
+```
 
-- Observed: the sample served the Home page and `Hello, world!` at localhost:5081.
-- Observed: the page was unstyled; the standard Blazor error UI text was visible.
-- Important: without CSS, the default Blazor error UI appears even if no runtime error occurred. Its visibility alone is not proof of a runtime exception.
-- Suspected root cause: CSS/JavaScript static assets failed to load, potentially because the project ran without `ASPNETCORE_ENVIRONMENT=Development`. This remains unconfirmed.
-- Next verification: restart the local app with the Development environment selected; review Network and Console if assets still fail.
-- No successful fully styled local render, `dotnet build` log or Azure deployment has been verified yet.
+Run the PHP application in a separate terminal:
 
-## Task 3.2 - C# application
+```powershell
+cd "SWE40006_Software_Deployment_and_Evolution/Assignments/Task 3/task-3.3-deploylens-php"
+php -S localhost:5084
+```
 
-- Planned: a small ASP.NET Core study task planner with server-side input validation.
-- Local build and testing: pending.
-- Azure deployment and deactivation: pending.
+## Evidence
 
-## Task 3.3 - PHP application
+- `evidence/assessments/` includes the actual assessment JSON exports from C# and PHP. Both record READY, score 86/100 and risk 14/100 for the sample release.
+- The two applications use a shared UI design, but their backend analysis logic is independent.
+- The C# Web App was deliberately deactivated. Its URL therefore returns Azure's stopped-app response.
+- The editable report, PDF submission copy and screenshots are kept separately pending their final addition to GitHub.
 
-- Planned: a small PHP expense-splitting calculator with server-side validation.
-- Local testing: pending.
-- Azure deployment: pending.
+DeployLens evaluates user-entered checklist values. Its score is intended for demonstration and does not establish that a real production release has passed security or infrastructure checks.
 
-## Evidence checklist
+## Attribution
 
-- Screenshots of the existing application running locally and deployed on Azure
-- C# source, build output, local test and live deployment
-- Evidence of C# App Service deactivation (Stopped state)
-- PHP installation, original web app, local test and live deployment
-- Azure deployment logs and any actual errors, with causes, fixes and verification
-- Public URLs and source references for lecturer verification
-
-## Report
-
-The report will include student and unit details, declared task level, deployment descriptions, labelled screenshots, observed errors and resolutions, and public verification URLs.
-
-- Only verified outcomes will be reported as completed.
-- No account secrets, tokens or generated build output will be committed.
-- Screenshots and report content must be collected from the actual development and deployment steps.
-
-### Task 3.1 diagnostic log - 16 October 2026, follow-up
-
-- User-provided terminal log confirms `Hosting environment: Production` when running `dotnet run --urls http://localhost:5081` from source.
-- ASP.NET Core warned: `Static Web Assets are not enabled` outside published output.
-- Requests for `dotnetcoresample.styles.css`, `Components/Layout/ReconnectModal.razor.js` and `_framework/blazor.web.js` resulted in `FileNotFoundException`.
-- Separate HTTPS redirection warning: no HTTPS port was configured for local HTTP use.
-- Recommended local corrective action (not yet verified): stop the app and run `$env:ASPNETCORE_ENVIRONMENT = "Development"`, `$env:DOTNET_ENVIRONMENT = "Development"`, then `dotnet run --no-launch-profile --urls "http://localhost:5081"`.
-- Awaiting terminal log showing the Development environment and a correctly styled browser page before marking Task 3.1 local testing complete.
+Task 3.1 uses [Microsoft Azure Samples' dotnetcore-docs-hello-world](https://github.com/Azure-Samples/dotnetcore-docs-hello-world), distributed under its upstream license. The original project is referenced through a Git submodule.

@@ -1,0 +1,16 @@
+{
+  "release": {
+    "name": "Customer Portal",
+    "version": "2.4.0",
+    "environment": "Production",
+    "changeType": "Minor"
+  },
+  "score": 86,
+  "risk": 14,
+  "status": "READY",
+  "summary": "The selected controls indicate a release that is ready for final approval.",
+  "passed": 6,
+  "total": 6,
+  "findings": [],
+  "analyzedAt": "2026-10-18T10:10:57Z"
+}
