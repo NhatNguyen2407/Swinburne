@@ -1,6 +1,6 @@
-# Demo 01 — Data Processing and Visualisation
+# Demo 01 - Data Processing and Visualisation
 
-**Unit:** COS30045 — Data Processing and Visualisation  
+**Unit:** COS30045 - Data Processing and Visualisation\
 **Platform:** KNIME Analytics Platform
 
 ## Overview

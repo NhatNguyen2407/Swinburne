@@ -26,20 +26,20 @@ Open http://localhost:8000 in a browser. D3 is loaded from its CDN, so the brows
 Week05/
 ├── index.html
 ├── css/
-│   └── style.css
+│ └── style.css
 ├── data/
-│   ├── ARE_Spot_Prices.csv
-│   ├── tv_55inch_energy.csv
-│   └── tv_screen_sizes.csv
+│ ├── ARE_Spot_Prices.csv
+│ ├── tv_55inch_energy.csv
+│ └── tv_screen_sizes.csv
 ├── js/
-│   ├── bar-chart.js
-│   ├── line-chart.js
-│   └── donut-chart.js
+│ ├── bar-chart.js
+│ ├── line-chart.js
+│ └── donut-chart.js
 ├── scripts/
-│   └── prepare_tv_data.py
+│ └── prepare_tv_data.py
 ├── docs/
-│   ├── EXERCISE_NOTES.md
-│   └── AI_DECLARATION.md
+│ ├── EXERCISE_NOTES.md
+│ └── AI_DECLARATION.md
 └── README.md
 ```
 

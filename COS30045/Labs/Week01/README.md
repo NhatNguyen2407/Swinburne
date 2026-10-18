@@ -1,4 +1,4 @@
-# Week 01 — Introduction to Data Processing with KNIME
+# Week 01 - Introduction to Data Processing with KNIME
 
 ## Overview
 
@@ -9,10 +9,10 @@ This lab folder contains the Week 01 KNIME workflow, source data, dataset docume
 ```text
 Week01/
 ├── data/
-│   ├── BrandCount.csv
-│   └── tv_2026_02_15.csv
+│ ├── BrandCount.csv
+│ └── tv_2026_02_15.csv
 ├── documentation/
-│   └── televisionsmay2015(1).docx
+│ └── televisionsmay2015(1).docx
 └── workflow/
     └── COS30045_Lab01.knwf
 ```

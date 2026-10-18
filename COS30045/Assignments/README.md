@@ -1,4 +1,4 @@
-# COS30045 — Assignments
+# COS30045 - Assignments
 
 This directory contains assessment-related materials for **COS30045 Data Processing and Visualisation** at Swinburne University of Technology.
 
@@ -7,13 +7,13 @@ This directory contains assessment-related materials for **COS30045 Data Process
 ```text
 Assignments/
 ├── Demo_01/
-│   ├── AI_Use.docx
-│   ├── BrandCount.csv
-│   ├── COS30045 W1 Class.pdf
-│   ├── COS30045_Lab01.knwf
-│   ├── televisionsmay2015(1).docx
-│   ├── tv_2026_02_15.csv
-│   └── README.md
+│ ├── AI_Use.docx
+│ ├── BrandCount.csv
+│ ├── COS30045 W1 Class.pdf
+│ ├── COS30045_Lab01.knwf
+│ ├── televisionsmay2015(1).docx
+│ ├── tv_2026_02_15.csv
+│ └── README.md
 └── README.md
 ```
 

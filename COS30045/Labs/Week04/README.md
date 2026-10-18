@@ -28,16 +28,16 @@ Week04/
 ├── house.html
 ├── dom.html
 ├── assets/
-│   ├── style.css
-│   └── house-annotated.svg
+│ ├── style.css
+│ └── house-annotated.svg
 ├── data/
-│   └── tvBrandCount.csv
+│ └── tvBrandCount.csv
 ├── js/
-│   ├── chart.js
-│   └── dom.js
+│ ├── chart.js
+│ └── dom.js
 ├── docs/
-│   ├── EXERCISE_NOTES.md
-│   └── AI_DECLARATION.md
+│ ├── EXERCISE_NOTES.md
+│ └── AI_DECLARATION.md
 └── README.md
 ```
 

@@ -25,17 +25,17 @@ The story follows a fixed sequence:
 Week03/
 ├── index.html
 ├── assets/
-│   ├── styles.css
-│   └── charts.js
+│ ├── styles.css
+│ └── charts.js
 ├── data/
-│   ├── summary.js
-│   ├── size_summary.csv
-│   └── technology_60_69.csv
+│ ├── summary.js
+│ ├── size_summary.csv
+│ └── technology_60_69.csv
 ├── docs/
-│   ├── STORYBOARD.md
-│   └── AI_DECLARATION.md
+│ ├── STORYBOARD.md
+│ └── AI_DECLARATION.md
 ├── scripts/
-│   └── rebuild.py
+│ └── rebuild.py
 ├── requirements.txt
 └── README.md
 ```
