@@ -1,7 +1,13 @@
-# Supporting documents
+# Supporting Documents
 
-Place cross-week reference material and deployment walkthroughs in this directory, including guides for WiX, Docker, Azure, and Ansible.
+This directory includes the SWE40006 reference files:
 
-Suggested filenames should remain close to the originals supplied by the course so they are easy to cross-reference with tutorial instructions.
+- `Ansible Guide.pdf`
+- `Azure guide.pdf`
+- `Docker walkthrough.pdf`
+- `L02-Why-Docker.pdf`
+- `WiX walkthrough.pdf`
+- `WiX walkthrough (updated 2026).pdf`
+- `Welcome-1.zip`
 
-> Add the original reference PDFs and any example archives here. Review archives before committing them, and remove credentials or private keys from any material intended for a public repository.
+These are study references rather than evidence of a completed build or deployment. Redistribution remains subject to the course material's terms.

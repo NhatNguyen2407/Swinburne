@@ -1,47 +1,15 @@
-# Swinburne Coursework Repository
+# Swinburne Coursework
 
-A central repository for coursework, assignments, practical exercises, and project work completed as part of studies at Swinburne University of Technology.
+I keep coursework, practical experiments, and project documentation from my studies at Swinburne University of Technology - Vietnam in this repository.
 
-## Navigate the repository
+## Subjects
 
-- **[COS30049 - Computing Technology Innovation Project](./COS30049_Computing_Technology_Innovation_Project/README.md)**\
- Original group-project attribution, contributor evidence links, and documentation (source code not mirrored).
-- **[SWE40006 - Software Deployment and Evolution](./SWE40006_Software_Deployment_and_Evolution/README.md)**\
- Course notes, tutorials, supporting deployment guides, and Task 1 project documentation.
+- [COS30045 - Data Visualisation](COS30045/README.md) - KNIME exercises, D3 charts, a demo assessment, and project notes.
+- [COS30049 - Computing Technology Innovation Project](COS30049_Computing_Technology_Innovation_Project/README.md) - SigmaSecurity group-project overview and verified frontend contribution records.
+- [SWE40006 - Software Deployment and Evolution](SWE40006_Software_Deployment_and_Evolution/README.md) - Windows packaging, Azure deployment, Docker applications, and class materials.
 
-## Repository structure
+## Working with the projects
 
-Coursework is organized by subject or project where possible. Each course folder should contain its own README describing its contents, layout, and any setup or usage instructions.
+Each subject has its own README. KNIME workflows may require local data paths to be checked after import. D3 pages reading CSV files should be opened through a local HTTP server. Some Azure deployment URLs and evidence describe a specific point in time, not necessarily live services.
 
-```text
-Swinburne/
-└── SWE40006_Software_Deployment_and_Evolution/
-    ├── Assignments/
-    │   └── Task 1/
-    ├── Documents/
-    ├── Lectures/
-    └── Tutorials/
-```
-
-The tree above highlights the documented SWE40006 area; it is not intended to list every file in the repository.
-
-## Working with the materials
-
-1. Open the relevant course folder.
-2. Read that folder's README before using its materials.
-3. For code projects, check the project-specific README for prerequisites and build/run instructions.
-4. Keep source files, assignment reports, and genuine verification evidence clearly separated.
-5. Do not commit credentials, private keys, access tokens, generated build output, or machine-specific configuration.
-
-## Academic integrity and attribution
-
-This repository is a personal coursework archive. Follow Swinburne's academic integrity requirements and the license or attribution terms that apply to any third-party material. Course resources may be subject to copyright and should not be redistributed beyond permitted use.
-
-## Maintenance
-
-When adding a course or project, include a README with:
-- purpose and scope;
-- directory overview;
-- required tools or dependencies;
-- build/run instructions, where applicable;
-- assignment status and evidence requirements, where applicable.
+Team contributions, individual work, third-party examples, and course resources are documented separately. This is a coursework archive rather than a single production application.

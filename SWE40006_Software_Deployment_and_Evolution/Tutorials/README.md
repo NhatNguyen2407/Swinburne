@@ -1,20 +1,13 @@
-# Tutorial materials
+# Tutorial Materials
 
-Tutorial worksheets, task briefs, walkthroughs, and supporting screenshots belong here, grouped by week.
+The tutorial folder includes:
 
-## Suggested structure
+- `SWE40006 Tutorial 1.pdf`
+- `Week 02/SWE40006 Tutorial 2.pdf`
+- `Week 02/SWE40006_Task_02.docx`
+- `Week 02/SWE40006_Task_02.pdf`
+- `Week 02/Task2_screenshots.zip`
+- `Week 03/SWE40006 Tutorial 3-1.pdf`
+- `Week 04/SWE40006 Tutorial 4.pdf`
 
-```text
-Tutorials/
-├── Week 01/
-│   ├── tutorial worksheet
-│   ├── task brief
-│   └── walkthrough
-├── Week 02/
-├── Week 03/
-└── Week 04/
-```
-
-Keep tutorial-provided/example screenshots clearly separated from screenshots captured as evidence for your own assignment submission. Never present sample material as evidence that your own build or deployment succeeded.
-
-> Add the original PDF/DOCX/ZIP files from the course-material archive to the appropriate week folders.
+Tutorial screenshots and examples should not be presented as evidence of independently completed assignment work.
