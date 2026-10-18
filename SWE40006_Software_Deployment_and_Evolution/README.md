@@ -1,4 +1,4 @@
-# SWE40006 — Software Deployment and Evolution
+# SWE40006 - Software Deployment and Evolution
 
 Course workspace for lecture notes, tutorial materials, supporting deployment guides, and assignment work.
 
@@ -24,18 +24,18 @@ SWE40006_Software_Deployment_and_Evolution/
 
 ## Course materials
 
-- [Lectures](./Lectures/README.md) — lecture slides and related weekly material.
-- [Tutorials](./Tutorials/README.md) — tutorial instructions and practical exercises.
-- [Supporting documents](./Documents/README.md) — deployment walkthroughs and reference guides.
-- [Task 1 — HelloWiX](./Assignments/Task%201/README.md) — assignment overview, project structure, and evidence checklist.
+- [Lectures](./Lectures/README.md) - lecture slides and related weekly material.
+- [Tutorials](./Tutorials/README.md) - tutorial instructions and practical exercises.
+- [Supporting documents](./Documents/README.md) - deployment walkthroughs and reference guides.
+- [Task 1 - HelloWiX](./Assignments/Task%201/README.md) - assignment overview, project structure, and evidence checklist.
 
-## Task 1 — HelloWiX
+## Task 1 - HelloWiX
 
 The Task 1 project area groups the existing application and packaging projects:
 
-- **HelloWiX** — Windows Forms application.
-- **HelloWiX.Installer** — WiX-based MSI installer project and its related dependency.
-- **HelloWiX.Package** — MSIX packaging project and assets.
+- **HelloWiX** - Windows Forms application.
+- **HelloWiX.Installer** - WiX-based MSI installer project and its related dependency.
+- **HelloWiX.Package** - MSIX packaging project and assets.
 
 Refer to the Task 1 README for current project details and required verification steps.
 

@@ -1,6 +1,6 @@
 # Source materials manifest
 
-The uploaded course archive includes lecture PDFs, tutorial PDFs, task briefs in PDF/DOCX format, deployment walkthroughs, example archives, and screenshot archives for Weeks 1–2.
+The uploaded course archive includes lecture PDFs, tutorial PDFs, task briefs in PDF/DOCX format, deployment walkthroughs, example archives, and screenshot archives for Weeks 1-2.
 
 ## Security exclusion
 
