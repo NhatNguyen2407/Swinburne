@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="COS30045 Week 6 - interactive histogram and scatterplot using D3.">
+  <title>Week 06 - Exploring TV energy</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="#top" class="brand">COS30045 <span>/ WEEK 06</span></a>
+      <nav aria-label="Course exercise navigation">
+        <a href="../Week04/index.html">Week 4</a>
+        <a href="../Week05/index.html">Week 5</a>
+        <a href="#histogram">Histogram</a>
+        <a href="#scatter">Scatterplot</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top" class="wrap">
+    <section class="intro">
+      <p class="eyebrow">D3 / Exercises 6.1-6.4</p>
+      <h1>What affects TV energy use?</h1>
+      <p>These charts use Australian television registration records. The histogram shows how annual labelled energy consumption is distributed. The scatterplot helps explore how screen size relates to that figure.</p>
+    </section>
+    <section class="controls" aria-label="Chart filters">
+      <div>
+        <h2>Explore the data</h2>
+        <p>Select a screen technology or size. Both charts update together.</p>
+      </div>
+      <div class="control-group">
+        <span class="control-label">Screen technology</span>
+        <div id="tech-filters" class="buttons" role="group" aria-label="Filter screen technology"></div>
+      </div>
+      <label class="control-group">
+        <span class="control-label">Screen size</span>
+        <select id="size-filter">
+          <option value="all">All screen sizes</option>
+          <option value="24">24 inches</option>
+          <option value="32">32 inches</option>
+          <option value="55">55 inches</option>
+          <option value="65">65 inches</option>
+          <option value="75">75 inches</option>
+          <option value="85">85 inches</option>
+        </select>
+      </label>
+    </section>
+    <p id="summary" class="summary" aria-live="polite">Loading television data...</p>
+    <section id="histogram" class="chart-section">
+      <div class="section-head">
+        <p class="eyebrow">01 / Exercises 6.1 and 6.2</p>
+        <h2>Energy consumption distribution</h2>
+        <p>Each bar counts the TV records in a 150 kWh/year interval. Filters change the frequency, while bin widths stay the same.</p>
+      </div>
+      <div id="histogram-chart" class="chart" role="region" aria-label="Histogram of labelled annual energy consumption"></div>
+      <p class="caption">Figure 1. The x-axis shows labelled kWh/year; the y-axis counts registration records, not TVs sold.</p>
+    </section>
+    <section id="scatter" class="chart-section">
+      <div class="section-head">
+        <p class="eyebrow">02 / Exercises 6.3 and 6.4</p>
+        <h2>Screen size and energy consumption</h2>
+        <p>Each point represents one registration record. Hover over a point for its brand, model, screen size, star rating and labelled energy use.</p>
+      </div>
+      <div class="scatter-stage">
+        <div id="scatter-chart" class="chart" role="region" aria-label="Scatterplot of TV screen size against annual energy consumption"></div>
+        <div id="tooltip" class="tooltip" role="status"></div>
+      </div>
+      <p class="caption">Figure 2. Colour distinguishes LCD, LED and OLED. Overlapping points are partly transparent. One high-energy outlier remains included.</p>
+    </section>
+    <section class="method">
+      <h2>About the data</h2>
+      <p>The charts reconstruct the 4,233 cleaned Week 6 rows from the original television CSV already stored in Week 1. The row-selection file records which source rows appeared in the supplied Week 6 export, so I do not have to duplicate the dataset in this repository.</p>
+      <p>Figures are the values stated on energy labels. They are not household meter readings, and the dataset does not show how many TVs were sold.</p>
+    </section>
+  </main>
+  <footer><div class="wrap">COS30045 / Data Visualisation - Week 06</div></footer>
+</body>
+</html>

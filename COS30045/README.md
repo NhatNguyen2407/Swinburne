@@ -1,46 +1,34 @@
-# COS30045 - Data Processing and Visualisation
+# COS30045 - Data Visualisation
 
-Coursework repository for **COS30045 Data Processing and Visualisation** at Swinburne University of Technology.
+Practical work, assessment tracking and project notes for COS30045 at Swinburne University of Technology.
 
-This directory separates practical lab work, assessment materials, and project development.
+## Labs
 
-## Repository map
+- [Week 01](Labs/Week01/) - KNIME data processing and initial visualisations (also covers Week 2 tasks)
+- [Week 03](Labs/Week03/) - television data story and supporting analysis
+- [Week 04](Labs/Week04/) - SVG house, DOM manipulation and D3 bar chart
+- [Week 05](Labs/Week05/) - bar, line/scatter and donut charts
+- [Week 06](Labs/Week06/) - interactive histogram and scatterplot with filters and tooltips
 
-| Directory | Purpose |
-|---|---|
-| [Labs](Labs/) | Weekly practical exercises, source data, documentation, and KNIME workflows |
-| [Assignments](Assignments/) | Assessment artefacts and supporting documentation |
-| [Project](Project/) | Project planning and development materials |
+## Assessments
 
-### Current materials
+- [Demonstration 1](Assignments/Demo_01/) - KNIME exercise materials
+- [Visualisation Critique](Assignments/Critique/) - report stored separately in the provided course archive
+- [Demonstration 2](Assignments/Demo_02/) - Week 7 preparation and outstanding submission steps
+- [Data Visualisation Project](Project/) - future project work
 
-- [Week 01 lab](Labs/Week01/) - introductory data processing using KNIME
-- [Week 03 lab](Labs/Week03/) - explanatory TV energy data-story website, chart summaries, storyboard, and AI declaration
-- [Week 04 lab](Labs/Week04/) - SVG house, D3 DOM examples, and a CSV-driven brand-count bar chart
-- [Week 05 lab](Labs/Week05/) - D3 bar, line/scatter, and donut charts using course data
-- [Demo 01 assessment folder](Assignments/Demo_01/) - workflow, source dataset, exported brand-count data, and supporting documents
-- [Project overview](Project/README.md) - project components and development structure
+## Running the D3 labs
 
-## Tools
+Start a server from `COS30045/Labs`:
 
-- **KNIME Analytics Platform** for data import, cleaning, transformation, aggregation, and visualisation
-- **CSV** for tabular data and exported results
-- **GitHub** for version control and documentation
+```bash
+python -m http.server 8000
+```
 
-## Reopening a KNIME workflow
+Then open `http://localhost:8000/Week04/`, `/Week05/` or `/Week06/`. The pages load D3 from its official CDN.
 
-1. Clone or download the repository.
-2. Open KNIME Analytics Platform and import the relevant `.knwf` workflow.
-3. Inspect the CSV Reader and other file-dependent nodes.
-4. Confirm that each input path resolves to the intended dataset in your local copy.
-5. Execute the workflow and check the output tables and visualisations.
+## Notes
 
-**Important:** KNIME workflows can store file references that depend on the original folder layout or machine. Keep related data files in their current locations unless you also update and test the workflow paths.
+The TV dataset contains energy-rating registration records, not product sales. Charts and conclusions should be interpreted in that context.
 
-## Data and academic integrity
-
-Course materials and datasets are included to support learning. Check the course requirements and applicable data licences before redistributing them. Analytical claims should be based on the outputs produced by the workflow, and generative AI use should be declared accurately according to the unit's instructions.
-
-## Maintenance
-
-Documentation is updated as labs, assessments, and the project progress. Folder contents may therefore change during the teaching period.
+GitHub contains the exercise source code, but course submission also requires the relevant GitHub Classroom repositories, Mercury-hosted links and separate GenAI declaration documents where specified. I track those requirements in the assessment folders.
