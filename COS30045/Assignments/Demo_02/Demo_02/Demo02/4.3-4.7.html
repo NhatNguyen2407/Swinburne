@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 4.3-4.7 - Bar Chart</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <h1>TV Records by Brand</h1>
+  <div id="chart"></div>
+
+  <script>
+    const width = 800, height = 850;
+    const svg = d3.select("#chart").append("svg")
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .style("max-width", "100%");
+    const chart = svg.append("g").attr("transform", "translate(140,20)");
+
+    d3.csv("tvBrandCount.csv", d => ({ brand: d.brand, count: +d.count }))
+      .then(data => {
+        data.sort((a, b) => b.count - a.count);
+        console.log(data);
+        console.log("Min, Max, Extent:", d3.min(data, d => d.count),
+          d3.max(data, d => d.count), d3.extent(data, d => d.count));
+
+        const x = d3.scaleLinear()
+          .domain([0, d3.max(data, d => d.count)])
+          .range([0, 570]);
+        const y = d3.scaleBand()
+          .domain(data.map(d => d.brand))
+          .range([0, 750]).padding(0.2);
+
+        const bars = chart.selectAll("g.bar").data(data).join("g")
+          .attr("class", "bar")
+          .attr("transform", d => `translate(0,${y(d.brand)})`);
+
+        bars.append("rect")
+          .attr("width", d => x(d.count))
+          .attr("height", y.bandwidth()).attr("fill", "steelblue");
+        bars.append("text")
+          .attr("x", -10).attr("y", y.bandwidth() / 2 + 4)
+          .attr("text-anchor", "end").text(d => d.brand);
+        bars.append("text")
+          .attr("x", d => x(d.count) + 5)
+          .attr("y", y.bandwidth() / 2 + 4).text(d => d.count);
+
+        chart.append("g").attr("transform", "translate(0,750)")
+          .call(d3.axisBottom(x));
+      });
+  </script>
+</body>
+</html>

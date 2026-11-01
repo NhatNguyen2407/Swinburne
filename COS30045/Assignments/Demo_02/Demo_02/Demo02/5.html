@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 5 - Multi-chart</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <h1>Exercise 5 - D3 Charts</h1>
+  <h2>5.1 - Vertical Bar Chart</h2>
+  <div id="bar"></div>
+  <h2>5.2 - Scatter and Line Chart</h2>
+  <div id="line"></div>
+  <h2>5.3 - Donut Chart</h2>
+  <div id="donut"></div>
+
+  <script>
+    const width = 650, height = 350;
+    const w = 520, h = 260;
+
+    function makeChart(id) {
+      return d3.select(id).append("svg")
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        .style("max-width", "100%")
+        .append("g").attr("transform", "translate(75,30)");
+    }
+
+    // 5.1 - Vertical bar chart
+    d3.csv("tv_55inch_energy.csv", d => ({ type: d.technology, energy: +d.average_kwh }))
+      .then(data => {
+        data.sort((a, b) => b.energy - a.energy);
+        console.log("5.1", data);
+        const svg = makeChart("#bar");
+        const x = d3.scaleBand().domain(data.map(d => d.type)).range([0, w]).padding(0.3);
+        const y = d3.scaleLinear().domain([0, d3.max(data, d => d.energy)]).range([h, 0]);
+        svg.append("g").attr("transform", `translate(0,${h})`).call(d3.axisBottom(x));
+        svg.append("g").call(d3.axisLeft(y));
+        svg.append("text").attr("x", -55).attr("y", -10).text("kWh/year");
+        svg.selectAll("rect").data(data).join("rect")
+          .attr("x", d => x(d.type)).attr("y", d => y(d.energy))
+          .attr("width", x.bandwidth()).attr("height", d => h - y(d.energy))
+          .attr("fill", "steelblue");
+      });
+
+    // 5.2 - Scatter points connected by a line
+    d3.csv("ARE_Spot_Prices.csv", d => ({ year: +d.Year, price: +d["Average Price (notTas-Snowy)"] }))
+      .then(data => {
+        data.sort((a, b) => a.year - b.year);
+        console.log("5.2", data);
+        const svg = makeChart("#line");
+        const x = d3.scaleLinear().domain(d3.extent(data, d => d.year)).range([0, w]);
+        const y = d3.scaleLinear().domain([0, d3.max(data, d => d.price)]).range([h, 0]);
+        svg.append("g").attr("transform", `translate(0,${h})`)
+          .call(d3.axisBottom(x).ticks(7).tickFormat(d3.format("d")));
+        svg.append("g").call(d3.axisLeft(y));
+        svg.append("text").attr("x", -55).attr("y", -10).text("AUD/MWh");
+        const line = d3.line().x(d => x(d.year)).y(d => y(d.price));
+        svg.append("path").datum(data).attr("d", line)
+          .attr("fill", "none").attr("stroke", "steelblue").attr("stroke-width", 2);
+        svg.selectAll("circle").data(data).join("circle")
+          .attr("cx", d => x(d.year)).attr("cy", d => y(d.price))
+          .attr("r", 4).attr("fill", "orange");
+      });
+
+    // 5.3 - Donut chart
+    d3.csv("tv_screen_sizes.csv", d => ({ category: d.category, count: +d.count }))
+      .then(data => {
+        console.log("5.3", data);
+        const svg = d3.select("#donut").append("svg")
+          .attr("viewBox", "0 0 650 330").style("max-width", "100%")
+          .append("g").attr("transform", "translate(220,160)");
+        const pie = d3.pie().sort(null).value(d => d.count);
+        const arc = d3.arc().innerRadius(65).outerRadius(125);
+        const colours = d3.scaleOrdinal(d3.schemeCategory10);
+        const slices = pie(data);
+        svg.selectAll("path").data(slices).join("path")
+          .attr("d", arc).attr("fill", (d, i) => colours(i));
+        svg.selectAll("text").data(slices).join("text")
+          .attr("transform", d => `translate(${arc.centroid(d)})`)
+          .attr("text-anchor", "middle").text(d => d.data.category);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 6 - Histogram and Filters</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <h1>TV Energy Consumption</h1>
+  <div id="filters"></div>
+  <p id="count"></p>
+  <div id="histogram"></div>
+
+  <script>
+    const width = 750, height = 400, w = 630, h = 300;
+    const svg = d3.select("#histogram").append("svg")
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .style("max-width", "100%")
+      .append("g").attr("transform", "translate(75,20)");
+    const x = d3.scaleLinear().domain([0, 2700]).range([0, w]);
+    const y = d3.scaleLinear().range([h, 0]);
+    const bin = d3.bin().value(d => d.energyConsumption)
+      .domain(x.domain()).thresholds(d3.range(0, 2701, 150));
+
+    svg.append("g").attr("transform", `translate(0,${h})`)
+      .call(d3.axisBottom(x));
+    const yAxis = svg.append("g");
+
+    function drawHistogram(data) {
+      const bins = bin(data);
+      y.domain([0, d3.max(bins, d => d.length)]).nice();
+      yAxis.call(d3.axisLeft(y));
+      svg.selectAll("rect").data(bins).join("rect")
+        .attr("x", d => x(d.x0) + 1)
+        .attr("width", d => x(d.x1) - x(d.x0) - 2)
+        .attr("y", d => y(d.length))
+        .attr("height", d => h - y(d.length))
+        .attr("fill", "steelblue");
+      d3.select("#count").text(data.length + " TV records");
+      console.log("Bins:", bins);
+    }
+
+    d3.csv("Ex6_TVdata_withStar.csv", d => ({
+      screenTech: d.screenTech, energyConsumption: +d.energyConsumption
+    })).then(data => {
+      console.log("Week 6:", data);
+      d3.select("#filters").selectAll("button")
+        .data(["All", "LCD", "LED", "OLED"]).join("button")
+        .text(d => d).on("click", (event, type) => {
+          const selected = type === "All" ? data : data.filter(d => d.screenTech === type);
+          drawHistogram(selected);
+          d3.select("#filters").selectAll("button")
+            .style("background", d => d === type ? "lightgreen" : "");
+        }).filter(d => d === "All").style("background", "lightgreen");
+      drawHistogram(data);
+    });
+  </script>
+</body>
+</html>
