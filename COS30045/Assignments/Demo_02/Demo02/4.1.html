@@ -1,0 +1,134 @@
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 4.1 - SVG House</title>
+</head>
+<body>
+  <h1>My SVG House</h1>
+
+  <svg width="800" height="500" viewBox="0 0 1600 1000"
+       style="background: lightblue;">
+        <rect
+            x="0"
+            y="420"
+            width="1600"
+            height="80"
+            fill="lightgreen"
+        />
+
+        <rect
+            x="250"
+            y="200"
+            width="300"
+            height="220"
+            fill="lightgreen"
+            stroke="black"
+            stroke-width="9"
+        /> <!--rectangle-->
+
+        
+        <polygon
+            points="225,200 400,130 575,200"
+            fill="lightyellow"
+            stroke="black"
+            stroke-width="9"
+        /> <!--triangle-->
+
+        
+        <g fill="lightblue" stroke="black" stroke-width="3">
+
+            <!-- Left window -->
+            <g transform="translate(290, 260)">
+                <rect x="0" y="0" width="60" height="60"/>
+                <line x1="30" y1="0" x2="30" y2="60"/>
+                <line x1="0" y1="30" x2="60" y2="30"/>
+            </g>
+
+            <!-- Right window -->
+            <g transform="translate(350, 260)">
+                <rect x="0" y="0" width="60" height="60"/>
+                <line x1="30" y1="0" x2="30" y2="60"/>
+                <line x1="0" y1="30" x2="60" y2="30"/>
+            </g>
+
+        </g>
+
+        
+        <!-- Door -->
+        <rect
+            x="370"
+            y="320"
+            width="60"
+            height="100"
+            fill="saddlebrown"
+            stroke="black"
+            stroke-width="3"
+        />
+
+        <!-- Door knob -->
+        <circle
+            cx="420"
+            cy="375"
+            r="5"
+            fill="gold"
+        />
+
+        
+        <!-- Sun -->
+        <circle
+            cx="680"
+            cy="80"
+            r="35"
+            fill="gold"
+        />
+
+        <!-- Bush -->
+        <ellipse
+            cx="175"
+            cy="440"
+            rx="50"
+            ry="22"
+            fill="forestgreen"
+        />
+
+        
+        <line
+            x1="0" y1="420"
+            x2="800" y2="420"
+            stroke="black"
+            stroke-width="3"
+        />
+
+        
+        <polyline
+            points="40,420 70,370 100,420 130,370 160,420"
+            fill="none"
+            stroke="forestgreen"
+            stroke-width="5"
+        />
+
+        
+        <path
+            d="M 400 425 Q 500 460 400 500"
+            fill="none"
+            stroke="gray"
+            stroke-width="5"
+        />
+
+        
+        <text
+            x="400"
+            y="50"
+            text-anchor="start"
+            font-size="24"
+            fill="darkslategray"
+        >
+            My SVG House
+        </text>
+
+
+    </svg> <!-- where the image in -->
+</body>
+</html>

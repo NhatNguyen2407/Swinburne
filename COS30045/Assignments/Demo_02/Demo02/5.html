@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 5 - Multi-chart</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <h1>Exercise 5 - D3 Charts</h1>
+  <h2>5.1 - Vertical Bar Chart</h2>
+  <div id="bar"></div>
+  <h2>5.2 - Scatter and Line Chart</h2>
+  <div id="line"></div>
+  <h2>5.3 - Donut Chart</h2>
+  <div id="donut"></div>
+
+  <script>
+    const width = 650, height = 350;
+    const w = 520, h = 260;
+
+    function makeChart(id) {
+      return d3.select(id).append("svg")
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        .style("max-width", "100%")
+        .append("g").attr("transform", "translate(75,30)");
+    }
+
+    // 5.1 - Vertical bar chart
+    d3.csv("tv_55inch_energy.csv", d => ({ type: d.technology, energy: +d.average_kwh }))
+      .then(data => {
+        data.sort((a, b) => b.energy - a.energy); //from high to low
+        console.log("5.1", data);
+        const svg = makeChart("#bar");
+        const x = d3.scaleBand().domain(data.map(d => d.type)).range([0, w]).padding(0.3); //tech
+        const y = d3.scaleLinear().domain([0, d3.max(data, d => d.energy)]).range([h, 0]); //kWh
+        svg.append("g").attr("transform", `translate(0,${h})`).call(d3.axisBottom(x)); //x axis
+        svg.append("g").call(d3.axisLeft(y)); //y axis
+        svg.append("text").attr("x", -55).attr("y", -10).text("kWh/year");
+        svg.selectAll("rect").data(data).join("rect")
+          .attr("x", d => x(d.type)).attr("y", d => y(d.energy))
+          .attr("width", x.bandwidth()).attr("height", d => h - y(d.energy))
+          .attr("fill", "steelblue");
+      });
+
+    // 5.2 - Scatter points connected by a line
+    d3.csv("ARE_Spot_Prices.csv", d => ({ year: +d.Year, price: +d["Average Price (notTas-Snowy)"] }))
+      .then(data => {
+        data.sort((a, b) => a.year - b.year);
+        console.log("5.2", data);
+        const svg = makeChart("#line");
+        const x = d3.scaleLinear().domain(d3.extent(data, d => d.year)).range([0, w]);
+        const y = d3.scaleLinear().domain([0, d3.max(data, d => d.price)]).range([h, 0]);
+        svg.append("g").attr("transform", `translate(0,${h})`)
+          .call(d3.axisBottom(x).ticks(7).tickFormat(d3.format("d")));
+        svg.append("g").call(d3.axisLeft(y));
+        svg.append("text").attr("x", -55).attr("y", -10).text("AUD/MWh");
+        const line = d3.line().x(d => x(d.year)).y(d => y(d.price));
+        svg.append("path").datum(data).attr("d", line) //path uses all data
+          .attr("fill", "none").attr("stroke", "steelblue").attr("stroke-width", 2);
+        const points = svg.selectAll("circle").data(data).join("circle") //each point uses one data
+          .attr("cx", d => x(d.year)).attr("cy", d => y(d.price))
+          .attr("r", 4).attr("fill", "orange");
+
+        const tooltipWidth = 230, tooltipHeight = 58;
+        const tooltip = svg.append("g").style("opacity", 0)
+          .style("pointer-events", "none");
+        tooltip.append("rect").attr("width", tooltipWidth).attr("height", tooltipHeight)
+          .attr("rx", 3).attr("fill", "#606464").attr("fill-opacity", 0.9);
+        tooltip.append("text").attr("fill", "white").attr("font-size", 11);
+
+        const formatPrice = d3.format(",.2f");
+        const formatChange = d3.format("+,.2f");
+        points.on("mouseenter", (event, d) => {
+          const index = data.indexOf(d);
+          const previous = data[index - 1];
+          const details = [
+            `${d.year}: ${formatPrice(d.price)} AUD/MWh`,
+            previous
+              ? `Previous (${previous.year}): ${formatPrice(previous.price)} AUD/MWh`
+              : "Previous: none",
+            previous
+              ? `Change: ${formatChange(d.price - previous.price)} AUD/MWh`
+              : "Change: n/a"
+          ];
+          tooltip.select("text").selectAll("tspan").data(details).join("tspan")
+            .attr("x", 8).attr("y", (line, i) => 14 + i * 14).text(line => line);
+
+          const tooltipX = x(d.year) > w / 2
+            ? x(d.year) - tooltipWidth - 10
+            : x(d.year) + 10;
+          const tooltipY = y(d.price) > h / 2
+            ? y(d.price) - tooltipHeight - 10
+            : y(d.price) + 10;
+          tooltip.attr("transform", `translate(${Math.max(0, Math.min(w - tooltipWidth, tooltipX))},${Math.max(0, Math.min(h - tooltipHeight, tooltipY))})`)
+            .style("opacity", 1);
+        }).on("mouseleave", () => tooltip.style("opacity", 0));
+      });
+
+    // 5.3 - Donut chart
+    d3.csv("tv_screen_sizes.csv", d => ({ category: d.category, count: +d.count }))
+      .then(data => {
+        console.log("5.3", data);
+        const svg = d3.select("#donut").append("svg")
+          .attr("viewBox", "0 0 650 330").style("max-width", "100%")
+          .append("g").attr("transform", "translate(220,160)");
+        const pie = d3.pie().sort(null).value(d => d.count);
+        const arc = d3.arc().innerRadius(65).outerRadius(125);
+        const colours = d3.scaleOrdinal(d3.schemeCategory10); //color by cate
+        const slices = pie(data);
+        svg.selectAll("path").data(slices).join("path")
+          .attr("d", arc).attr("fill", (d, i) => colours(i));
+        svg.selectAll("text").data(slices).join("text")
+          .attr("transform", d => `translate(${arc.centroid(d)})`) 
+          .attr("text-anchor", "middle").text(d => d.data.category);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 6 - Histogram, Scatterplot and Tooltips</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <h1>TV Energy Consumption</h1>
+  <div id="filters"></div>
+  <p id="count"></p>
+  <div id="histogram"></div>
+  <h2>Energy Consumption by Star Rating</h2>
+  <div id="scatterplot"></div>
+
+  <script>
+    const width = 750, height = 400, w = 630, h = 300;
+    const svg = d3.select("#histogram").append("svg")
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .style("max-width", "100%")
+      .append("g").attr("transform", "translate(75,20)");
+    const x = d3.scaleLinear().domain([0, 2700]).range([0, w]);
+    const y = d3.scaleLinear().range([h, 0]);
+    const bin = d3.bin().value(d => d.energyConsumption) //create bin
+      .domain(x.domain()).thresholds(d3.range(0, 2701, 150)); //edge of bin
+
+    svg.append("g").attr("transform", `translate(0,${h})`)
+      .call(d3.axisBottom(x));
+    const yAxis = svg.append("g");
+
+    //6.1
+    function drawHistogram(data) {
+      const bins = bin(data);
+      y.domain([0, d3.max(bins, d => d.length)]).nice(); //round
+      yAxis.call(d3.axisLeft(y));
+      svg.selectAll("rect").data(bins).join("rect")
+        .attr("x", d => x(d.x0) + 1)
+        .attr("width", d => x(d.x1) - x(d.x0) - 2) //end - start
+        .attr("y", d => y(d.length)) //number of tv in bin
+        .attr("height", d => h - y(d.length))
+        .attr("fill", "steelblue");
+      d3.select("#count").text(data.length + " TV records");
+      console.log("Bins:", bins);
+    }
+
+    //6.3
+    function drawScatterplot(data) {
+      const chart = d3.select("#scatterplot").append("svg")
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        .style("max-width", "100%")
+        .append("g").attr("transform", "translate(75,20)");
+      const sx = d3.scaleLinear().domain([0, d3.max(data, d => d.star)]).range([0, w]); //star rating to coords
+      const sy = d3.scaleLinear().domain([0, d3.max(data, d => d.energyConsumption)]).range([h, 0]); //energy
+      const color = d3.scaleOrdinal(d3.schemeCategory10) //color
+        .domain([...new Set(data.map(d => d.screenTech))]);
+
+      chart.append("g").attr("transform", `translate(0,${h})`).call(d3.axisBottom(sx));
+      chart.append("g").call(d3.axisLeft(sy));
+      chart.append("text").attr("x", w / 2).attr("y", h + 45)
+        .attr("text-anchor", "middle").text("Star Rating");
+      chart.append("text").attr("transform", "rotate(-90)")
+        .attr("x", -h / 2).attr("y", -50).attr("text-anchor", "middle")
+        .text("Energy Consumption (kWh/year)");
+
+      const points = chart.selectAll("circle").data(data).join("circle")
+        .attr("cx", d => sx(d.star))
+        .attr("cy", d => sy(d.energyConsumption))
+        .attr("r", 3).attr("fill", d => color(d.screenTech))
+        .attr("opacity", 0.5);
+
+      //6.4
+      const tooltip = chart.append("g").style("opacity", 0)
+        .style("pointer-events", "none");
+      tooltip.append("rect").attr("width", 100).attr("height", 26)
+        .attr("rx", 3).attr("fill", "#606464").attr("fill-opacity", 0.85);
+      tooltip.append("text").attr("x", 50).attr("y", 18)
+        .attr("text-anchor", "middle").attr("fill", "white");
+      points.on("mouseenter", (event, d) => { 
+        tooltip.select("text").text(d.screenSize + " inches");
+        tooltip.attr("transform", `translate(${Math.max(0, Math.min(w - 100, sx(d.star) - 50))},${Math.max(0, sy(d.energyConsumption) - 35)})`)
+          .style("opacity", 1);
+      }).on("mouseleave", () => tooltip.style("opacity", 0));
+
+      const legend = chart.append("g").attr("transform", `translate(${w - 90},10)`); 
+      color.domain().forEach((type, i) => {
+        const item = legend.append("g").attr("transform", `translate(0,${i * 20})`);
+        item.append("rect").attr("width", 10).attr("height", 10).attr("fill", color(type));
+        item.append("text").attr("x", 15).attr("y", 10).text(type);
+      });
+    }
+
+    //6.2
+    d3.csv("Ex6_TVdata_withStar.csv", d => ({
+      screenTech: d.screenTech, energyConsumption: +d.energyConsumption,
+      star: +d.star, screenSize: +d.screenSize
+    })).then(data => {
+      console.log("Week 6:", data);
+      d3.select("#filters").selectAll("button")
+        .data(["All", "LCD", "LED", "OLED"]).join("button")
+        .text(d => d).on("click", (event, type) => { //click event
+          const selected = type === "All" ? data : data.filter(d => d.screenTech === type); //filter
+          drawHistogram(selected); //draw from filter
+          d3.select("#filters").selectAll("button")
+            .style("background", d => d === type ? "lightgreen" : "");
+        }).filter(d => d === "All").style("background", "lightgreen");
+      drawHistogram(data);
+      drawScatterplot(data);
+    });
+  </script>
+</body>
+</html>
